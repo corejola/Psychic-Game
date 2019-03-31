@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+</head>
+
+<body>
+
+
+    <h2>The Psychic Game</h2>
+
+    <div>
+        <h3>Guess What Letter I'm Thining Of</h3>
+        <p>Your Choice: </p>
+    </div>
+
+    <div>
+        <p>Wins:<span id="wins-text"></span></p>
+
+        <p>Losses:<span id="losses-text"></span></p>
+
+        <p>Guesses Left:<span id="guessLeft-text"></span></p>
+
+        <p>Your Guesses So Far:<span id="userGuess-text"></span></p>
+    </div>
+
+    <!-- <script src="assets/javascript/game.js"></script> -->
+
+    <!-- test script -->
+    <script type="text/javascript">
+
+        // psychic game possible choices
+        var compChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        // test
+        // console.log(compChoice[25]);
+
+        // starting conditions
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 10;
+
+        var compGuess = compChoice[Math.floor(Math.random() * 25)];
+
+        // test
+        // console.log(compGuess);
+
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var guessesLeftText = document.getElementById("guessesLeft-text");
+        var userGuess = document.getElementById("userGuess-text");
+
+        document.onkeyup = function (event) {
+            var userGuess = event.key;
+
+
+            // Logic section
+            // if (userGuess === compChoice) {
+            //     wins++;
+            // } else if (userGuess !== compChoice) {
+            //     losses++;
+            //     guessesLeft--;
+            // }
+
+
+            // data to be displayed
+
+
+        };
+    </script>
+</body>
+
+</html>
