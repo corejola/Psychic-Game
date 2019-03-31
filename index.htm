@@ -15,7 +15,7 @@
     <h2>The Psychic Game</h2>
 
     <div>
-        <h3>Guess What Letter I'm Thining Of</h3>
+        <h3>Guess What Letter I'm Thinking Of</h3>
         <!-- <p>Your Choice: </p> -->
     </div>
 
@@ -29,63 +29,9 @@
         <p>Your Guesses So Far:<span id="userGuess-text"></span></p>
     </div>
 
-    <!-- <script src="assets/javascript/game.js"></script> -->
+    <script src="assets/javascript/game.js"></script>
 
     <!-- test script -->
-    <script>
-
-        // psychic game possible choices
-        var compChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-        // test
-        // console.log(compChoice[25]);
-
-        // starting conditions
-
-        var wins = 0;
-        var losses = 0;
-        var guessesLeft = 10;
-        var compGuess = compChoice[Math.floor(Math.random() * 25)];
-
-        // test
-        console.log(compGuess);
-
-        // var winsText = document.getElementById("wins-text");
-        // var lossesText = document.getElementById("losses-text");
-        // var guessesLeftText = document.getElementById("guessesLeft-text");
-        var userGuessText = document.getElementById("userGuess-text");
-
-
-        document.onkeyup = function (event) {
-            var userGuess = event.key;
-
-
-
-            // // for loop to run for the 10 guesses
-            // for (var i = 10; i > 0; i--) {
-
-            //     // Logic section - DRY
-            //     if (userGuess === compGuess) {
-            //         wins++;
-            //     } else if (userGuess !== compGuess) {
-            //         losses++;
-            //         guessesLeft--;
-            //         if (guessesLeft === 0) {
-            //             break;
-            //         }
-            //     }
-
-            // data to be displayed
-
-
-            // winsText.textContent = wins;
-            // lossesText.textContent = losses;
-            userGuessText.textContent = userGuess;
-
-
-        };
-
-    </script>
 
 </body>
 
