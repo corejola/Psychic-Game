@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Psychic Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
 </head>
@@ -16,7 +16,7 @@
 
     <div>
         <h3>Guess What Letter I'm Thining Of</h3>
-        <p>Your Choice: </p>
+        <!-- <p>Your Choice: </p> -->
     </div>
 
     <div>
@@ -24,7 +24,7 @@
 
         <p>Losses:<span id="losses-text"></span></p>
 
-        <p>Guesses Left:<span id="guessLeft-text"></span></p>
+        <p>Guesses Left:<span id="guessesLeft-text"></span></p>
 
         <p>Your Guesses So Far:<span id="userGuess-text"></span></p>
     </div>
@@ -32,7 +32,7 @@
     <!-- <script src="assets/javascript/game.js"></script> -->
 
     <!-- test script -->
-    <script type="text/javascript">
+    <script>
 
         // psychic game possible choices
         var compChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -41,38 +41,51 @@
         // console.log(compChoice[25]);
 
         // starting conditions
+
         var wins = 0;
         var losses = 0;
         var guessesLeft = 10;
-
         var compGuess = compChoice[Math.floor(Math.random() * 25)];
 
         // test
         // console.log(compGuess);
 
-        var winsText = document.getElementById("wins-text");
-        var lossesText = document.getElementById("losses-text");
-        var guessesLeftText = document.getElementById("guessesLeft-text");
-        var userGuess = document.getElementById("userGuess-text");
 
         document.onkeyup = function (event) {
             var userGuess = event.key;
 
+            var winsText = document.getElementById("wins-text");
+            var lossesText = document.getElementById("losses-text");
+            var guessesLeftText = document.getElementById("guessesLeft-text");
+            var userGuess = document.getElementById("userGuess-text");
 
-            // Logic section
-            // if (userGuess === compChoice) {
-            //     wins++;
-            // } else if (userGuess !== compChoice) {
-            //     losses++;
-            //     guessesLeft--;
-            // }
+            // for loop to run for the 10 guesses
+            for (var i = 10; i > 0; i--) {
 
+                // Logic section - DRY
+                if (userGuess === compGuess) {
+                    wins++;
+                } else if (userGuess !== compGuess) {
+                    losses++;
+                    guessesLeft--;
+                    if (guessesLeft === 0) {
+                        // break for loop
+                    }
+                }
+
+            };
 
             // data to be displayed
 
 
+            winsText.textContent = wins;
+            lossesText.textContent = losses;
+
+
         };
+
     </script>
+
 </body>
 
 </html>
