@@ -48,38 +48,39 @@
         var compGuess = compChoice[Math.floor(Math.random() * 25)];
 
         // test
-        // console.log(compGuess);
+        console.log(compGuess);
+
+        // var winsText = document.getElementById("wins-text");
+        // var lossesText = document.getElementById("losses-text");
+        // var guessesLeftText = document.getElementById("guessesLeft-text");
+        var userGuessText = document.getElementById("userGuess-text");
 
 
         document.onkeyup = function (event) {
             var userGuess = event.key;
 
-            var winsText = document.getElementById("wins-text");
-            var lossesText = document.getElementById("losses-text");
-            var guessesLeftText = document.getElementById("guessesLeft-text");
-            var userGuess = document.getElementById("userGuess-text");
 
-            // for loop to run for the 10 guesses
-            for (var i = 10; i > 0; i--) {
 
-                // Logic section - DRY
-                if (userGuess === compGuess) {
-                    wins++;
-                } else if (userGuess !== compGuess) {
-                    losses++;
-                    guessesLeft--;
-                    if (guessesLeft === 0) {
-                        // break for loop
-                    }
-                }
+            // // for loop to run for the 10 guesses
+            // for (var i = 10; i > 0; i--) {
 
-            };
+            //     // Logic section - DRY
+            //     if (userGuess === compGuess) {
+            //         wins++;
+            //     } else if (userGuess !== compGuess) {
+            //         losses++;
+            //         guessesLeft--;
+            //         if (guessesLeft === 0) {
+            //             break;
+            //         }
+            //     }
 
             // data to be displayed
 
 
-            winsText.textContent = wins;
-            lossesText.textContent = losses;
+            // winsText.textContent = wins;
+            // lossesText.textContent = losses;
+            userGuessText.textContent = userGuess;
 
 
         };
