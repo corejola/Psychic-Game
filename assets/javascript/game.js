@@ -23,12 +23,13 @@ var guessesLeftText = document.getElementById("guessesLeft-text");
 var userGuessText = document.getElementById("userGuess-text");
 
 function gameStart() {
-    compGuess;
-    winsText.textContent = "" + wins;
-    lossesText.textContent = lossese;
-    guessesLeftText.textContent = guessesLeft;
+    return compGuess;
 
 }
+
+guessesLeftText.textContent = guessesLeft;
+winsText.textContent = "" + wins;
+lossesText.textContent = "" + losses;
 
 // function - set up game in the begining
 
@@ -39,6 +40,7 @@ document.onkeyup = function (event) {
 
     if (userGuess === compGuess) {
         wins++;
+        gameStart();
     }
     else if (userGuess !== compGuess) {
         guessesLeft--;
@@ -59,11 +61,6 @@ document.onkeyup = function (event) {
 //     if ();
 
 // };
-
-
-// for loop to run for the 10 guesses
-
-
 // data to be displayed
 
 
