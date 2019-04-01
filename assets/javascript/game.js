@@ -19,10 +19,14 @@ var lossesText = document.getElementById("losses-text");
 var guessesLeftText = document.getElementById("guessesLeft-text");
 var userGuessText = document.getElementById("userGuess-text");
 
-function gameStart() {
-    return compChoice[Math.floor(Math.random() * 25)];
+// not sure how to reset the randomly 
+// function gameStart() {
+//     return compChoice[Math.floor(Math.random() * 25)];
+// }
+function reset() {
+    var guessReset = "";
+    guessReset = compGuess + guessReset;
 }
-
 guessesLeftText.textContent = guessesLeft;
 winsText.textContent = "" + wins;
 lossesText.textContent = "" + losses;
@@ -37,6 +41,7 @@ document.onkeyup = function (event) {
     if (userGuess === compGuess) {
         wins++;
         guessesLeft = 9;
+        reset();
         // need compGuess to regenerate a random letter.
     }
     else if (userGuess !== compGuess) {
