@@ -5,17 +5,14 @@ var compChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m
 // console.log(compChoice[25]);
 
 // starting conditions
-
+// global variables
 var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
-var compGuess = compChoice[Math.floor(Math.random() * 25)];
+var compGuess = compChoice[Math.floor(Math.random() * 25)]
 
 // test
 console.log("computer Guess " + compGuess);
-
-// global variables
-
 
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
@@ -23,8 +20,7 @@ var guessesLeftText = document.getElementById("guessesLeft-text");
 var userGuessText = document.getElementById("userGuess-text");
 
 function gameStart() {
-    return compGuess;
-
+    return compChoice[Math.floor(Math.random() * 25)];
 }
 
 guessesLeftText.textContent = guessesLeft;
@@ -40,7 +36,8 @@ document.onkeyup = function (event) {
 
     if (userGuess === compGuess) {
         wins++;
-        gameStart();
+        guessesLeft = 9;
+        // need compGuess to regenerate a random letter.
     }
     else if (userGuess !== compGuess) {
         guessesLeft--;
@@ -48,19 +45,19 @@ document.onkeyup = function (event) {
     if (guessesLeft === 0) {
         losses++;
         guessesLeft = 9;
+        // need compGuess to regenerate a random letter.
     }
 
     guessesLeftText.textContent = guessesLeft;
-    userGuessText.textContent = "" + userGuess;
+    var para = document.createElement("p");
+    para.innerHTML = userGuess;
+    userGuessText.appendChild(para);
+    // userGuessText.textContent = userGuess;
     winsText.textContent = "" + wins;
     lossesText.textContent = "" + losses;
-}
+};
 
 
-// function gameRestart() {
-//     if ();
-
-// };
 // data to be displayed
 
 
